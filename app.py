@@ -33,11 +33,11 @@ sorry_response= ['Xin lỗi, Tôi chưa hiểu câu hỏi của bạn hoặc có
                  'Bạn có thể nhắc lại câu hỏi lần nữa được không?']
 
 # Các mẫu chào hỏi
-greeting_inputs= ('xin chào', 'chào bạn', 'hello', 'hi', 'hey')
+greeting_inputs= ('xin chào', 'chào bạn', 'hello', 'hi', 'hey', 'chào')
 greeting_responses= ['Chào bạn, rất vui được hỗ trợ cho bạn!',
                      'Xin chào, rất vui được hỗ trợ cho bạn!',
-                     'Xin chào, tôi có thể cung cấp cho bạn một số thông tin về đại dịch COVID-19.',
-                     'Chào bạn, tôi có thể cung cấp cho bạn một số thông tin về đại dịch COVID-19.',
+                     'Xin chào, tôi có thể cung cấp cho bạn một số thông tin về đại dịch Covid-19.',
+                     'Chào bạn, tôi có thể cung cấp cho bạn một số thông tin về đại dịch Covid-19.',
                      'Xin chào, rất mong các thông tin hỗ trợ của tôi sẽ giúp ích cho bạn!',
                      'Chào bạn, rất mong các thông tin hỗ trợ của tôi sẽ giúp ích cho bạn!']
 
@@ -47,7 +47,7 @@ swearing_responses= ['Tôi xin phép không trả lời vì câu hỏi của b�
                      'Bạn có thể hỏi nghiêm túc hơn được không?']
 
 # tạm biệt
-bye_inputs= ('tạm biệt', 'xin cảm ơn', 'cảm ơn bạn','cảm ơn', 'bye')
+bye_inputs= ('tạm biệt', 'xin cảm ơn', 'cảm ơn bạn','cảm ơn', 'bye', 'thank', 'thanks')
 bye_responses= ['Tạm biệt!',
                 'Rất vui được hỗ trợ bạn!',
                 'Rất mong được gặp lại!']
