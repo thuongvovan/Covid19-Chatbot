@@ -42,7 +42,7 @@ greeting_responses= ['Chào bạn, rất vui được hỗ trợ cho bạn!',
                      'Chào bạn, rất mong các thông tin hỗ trợ của tôi sẽ giúp ích cho bạn!']
 
 # Các mẫu nói tục
-swearing_inputs= ('đụ', 'địt', 'đéo', 'cặc', 'lồn', 'mẹ mày', 'bố mày', 'thằng', 'cha mày')
+swearing_inputs= ('đụ', 'địt', 'đéo', 'cặc', 'lồn', 'mẹ mày', 'bố mày', 'thằng', 'cha mày', 'chát sex')
 swearing_responses= ['Tôi xin phép không trả lời vì câu hỏi của bạn thiếu nghiêm túc.',
                      'Bạn có thể hỏi nghiêm túc hơn được không?']
 
