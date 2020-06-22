@@ -73,7 +73,7 @@ def response(question_input):
 
 def robot_brain(user_response):
     user_response= user_response.lower()
-    if (True in [greeting_input in user_response for greeting_input in greeting_inputs]) and (user_response.count(' ') <= 6):
+    if (True in [greeting_input in user_response for greeting_input in greeting_inputs]) and (user_response.count(' ') <= 6) or (user_response == 'hi'):
         return random.choice(greeting_responses)
     elif (True in [swearing_input in user_response for swearing_input in swearing_inputs]):
         return random.choice(swearing_responses)
