@@ -33,7 +33,7 @@ sorry_response= ['Xin lỗi, Tôi chưa hiểu câu hỏi của bạn hoặc có
                  'Bạn có thể nhắc lại câu hỏi lần nữa được không?']
 
 # Các mẫu chào hỏi
-greeting_inputs= ('xin chào', 'chào bạn', 'hello', 'hi', 'hey', 'chào')
+greeting_inputs= ('xin chào', 'chào bạn', 'hello', 'hey', 'chào')
 greeting_responses= ['Chào bạn, rất vui được hỗ trợ cho bạn!',
                      'Xin chào, rất vui được hỗ trợ cho bạn!',
                      'Xin chào, tôi có thể cung cấp cho bạn một số thông tin về đại dịch Covid-19.',
