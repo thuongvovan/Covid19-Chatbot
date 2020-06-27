@@ -87,7 +87,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home_v2.html")
 
 @app.route("/get")
 def get_bot_response():

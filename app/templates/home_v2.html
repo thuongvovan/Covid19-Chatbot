@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <title>Chatbot tư vấn về Covid-19 của Võ Văn Thương</title>
+  <head>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      body {
+        font-family: "Times New Roman";
+      }
+      h1 {
+        background-color: yellow;
+        display: inline-block;
+        font-size: 2em;
+        margin: 0;
+        padding: 14px;
+      }
+      h3 {
+        color: black;
+        font-size: 15px;
+        margin-top: 1px;
+        text-align: center;
+      }
+      #chatbox {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 60px;
+      }
+      #userInput {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 60px;
+      }
+      #textInput {
+        width: 90%;
+        border: none;
+        border-bottom: 3px solid black;
+        font-family: "Helvetica";
+        font-size: 12px;
+      }
+      .userText {
+        color: white;
+        font-family: "Helvetica";
+        font-size: 14px;
+        text-align: right;
+        line-height: 30px;
+      }
+      .userText span {
+        background-color: #808080;
+        padding: 10px;
+        border-radius: 2px;
+      }
+      .botText {
+        color: white;
+        font-family: "Helvetica";
+        font-size: 14px;
+        text-align: left;
+        line-height: 30px;
+      }
+      .botText span {
+        background-color: #4169e1;
+        padding: 10px;
+        border-radius: 2px;
+      }
+      #tidbit {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+      }
+      .boxed {
+        margin-left: auto;
+        margin-right: auto;
+        width: 78%;
+        margin-top: 60px;
+        border: 1px solid green;
+      }
+      .box {
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <img />
+    <center>
+      <h1>
+        <img
+          src="https://raw.githubusercontent.com/thuongvovan/covid19-chatbot/master/virus.png"
+          alt="CANDICE"
+          style="width:60px;height:60px;"
+        />Tình hình Covid-19 trên thế giới
+      </h1>
+      <embed src="https://covid19-mapviz.herokuapp.com" style="width:70%; height: 40vw;">
+    </center>
+    <div class="box"></div>
+    <center>
+      <h1>
+        <img
+          src="https://raw.githubusercontent.com/thuongvovan/covid19-chatbot/master/virus.png"
+          alt="CANDICE"
+          style="width:60px;height:60px;"
+        />ChatBot tư vấn về Covid-19
+      </h1>
+    </center>
+    <h3>
+      <p>
+        Mã nguồn của ChatBot này có thể tham khảo tại
+        <a href="https://github.com/thuongvovan/covid19-chatbot">GitHub</a>
+        hoặc ChatBot khác có hỗ trợ nhận diện giộng nói và nói Tiếng Việt tại
+        <a href="https://github.com/thuongvovan/auto_info_call_center">GitHub</a>.
+      </p>
+    </h3>
+    <div class="boxed">
+      <div>
+        <div id="chatbox">
+          <p class="botText">
+            <span>Xin chào! Tôi là tổng đài tự động cung cấp thông tin về Covid-19. </span>
+          </p>
+          <p class="botText">
+            <span>Tôi được tạo bởi Võ Văn Thương. Một cử nhân ngành Y tế Công cộng đang theo đuổi con đường khoa học dữ liệu. </span>
+          </p>
+        </div>
+        <div id="userInput">
+          <input id="textInput" type="text" name="msg" placeholder="Message" />
+        </div>
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+          });
+        }
+        $("#textInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>
