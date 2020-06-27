@@ -33,7 +33,7 @@ sorry_response= ['Xin lỗi, Tôi chưa hiểu câu hỏi của bạn hoặc có
                  'Bạn có thể nhắc lại câu hỏi lần nữa được không?']
 
 # Các mẫu chào hỏi
-greeting_inputs= ('xin chào', 'chào bạn', 'hello', 'hi', 'hey', 'chào')
+greeting_inputs= ('xin chào', 'chào bạn', 'hello', 'hey', 'chào')
 greeting_responses= ['Chào bạn, rất vui được hỗ trợ cho bạn!',
                      'Xin chào, rất vui được hỗ trợ cho bạn!',
                      'Xin chào, tôi có thể cung cấp cho bạn một số thông tin về đại dịch Covid-19.',
@@ -42,7 +42,7 @@ greeting_responses= ['Chào bạn, rất vui được hỗ trợ cho bạn!',
                      'Chào bạn, rất mong các thông tin hỗ trợ của tôi sẽ giúp ích cho bạn!']
 
 # Các mẫu nói tục
-swearing_inputs= ('đụ', 'địt', 'đéo', 'cặc', 'lồn', 'mẹ mày', 'bố mày', 'thằng', 'cha mày')
+swearing_inputs= ('đụ', 'địt', 'đéo', 'cặc', 'lồn', 'mẹ mày', 'bố mày', 'thằng', 'cha mày', 'chát sex')
 swearing_responses= ['Tôi xin phép không trả lời vì câu hỏi của bạn thiếu nghiêm túc.',
                      'Bạn có thể hỏi nghiêm túc hơn được không?']
 
@@ -73,7 +73,7 @@ def response(question_input):
 
 def robot_brain(user_response):
     user_response= user_response.lower()
-    if (True in [greeting_input in user_response for greeting_input in greeting_inputs]) and (user_response.count(' ') <= 6):
+    if (True in [greeting_input in user_response for greeting_input in greeting_inputs]) and (user_response.count(' ') <= 6) or (user_response == 'hi'):
         return random.choice(greeting_responses)
     elif (True in [swearing_input in user_response for swearing_input in swearing_inputs]):
         return random.choice(swearing_responses)
