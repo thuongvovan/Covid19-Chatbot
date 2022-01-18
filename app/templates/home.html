@@ -2,122 +2,119 @@
 <html>
   <title>Chatbot tư vấn về Covid-19 của Võ Văn Thương</title>
   <head>
+    <meta charset="UTF-8">
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="home.css">
     <style>
-      body {
-        font-family: "Times New Roman";
-      }
-      h1 {
-        background-color: yellow;
-        display: inline-block;
-        font-size: 2em;
-        margin: 0;
-        padding: 14px;
-      }
-      h3 {
-        color: black;
-        font-size: 20px;
-        margin-top: 1px;
-        text-align: center;
-      }
-      #chatbox {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        margin-top: 60px;
-      }
-      #userInput {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        margin-top: 60px;
-      }
-      #textInput {
-        width: 90%;
-        border: none;
-        border-bottom: 3px solid black;
-        font-family: "Helvetica";
-        font-size: 12px;
-      }
-      .userText {
-        color: white;
-        font-family: "Helvetica";
-        font-size: 14px;
-        text-align: right;
-        line-height: 30px;
-      }
-      .userText span {
-        background-color: #808080;
-        padding: 10px;
-        border-radius: 2px;
-      }
-      .botText {
-        color: white;
-        font-family: "Helvetica";
-        font-size: 14px;
-        text-align: left;
-        line-height: 30px;
-      }
-      .botText span {
-        background-color: #4169e1;
-        padding: 10px;
-        border-radius: 2px;
-      }
-      #tidbit {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 300px;
-      }
-      .boxed {
-        margin-left: auto;
-        margin-right: auto;
-        width: 78%;
-        margin-top: 60px;
-        border: 1px solid green;
-      }
-      .box {
-        border: 2px solid black;
-      }
+        body {
+          font-family: "Times New Roman";
+        }
+        h1 {
+          font-size: 2em;
+          margin: 10px;
+          padding: 15px;
+          text-align: center;
+        }
+        h3 {
+          color: black;
+          font-size: 20px;
+          margin-top: 1px;
+          text-align: center;
+        }
+        #chatbox {
+          margin-left: auto;
+          margin-right: auto;
+          width: 95%;
+          margin-top: 60px;
+        }
+        #userInput {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 5%;
+          margin-bottom: 1%;
+          width: 80%;
+          margin-top: 60px;
+        }
+        #textInput {
+          width: 90%;
+          border: none;
+          border-bottom: 3px solid black;
+          line-height: 30px;
+          font-family: "Helvetica";
+          font-size: 12px;
+        }
+        .userText {
+          color: white;
+          font-family: "Helvetica";
+          font-size: 14px;
+          text-align: right;
+          line-height: 30px;
+        }
+        .userText span {
+          background-color: #2c8029;
+          padding: 10px;
+          border-radius: 2px;
+        }
+        .botText {
+          color: white;
+          font-family: "Helvetica";
+          font-size: 14px;
+          text-align: left;
+          line-height: 30px;
+        }
+        .botText span {
+          background-color: #3663ec;
+          padding: 10px;
+          border-radius: 2px;
+        }
+        #tidbit {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 300px;
+        }
+        .boxed {
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+          margin-top: 50px;
+          margin-bottom: 10px;
+          border: 1px solid green;
+        }
+        .box {
+          border: 2px solid black;
+        }
+
     </style>
+
   </head>
   <body>
-    <img />
-    <center>
-      <h1>
-        <img
-          src="https://raw.githubusercontent.com/thuongvovan/covid19-chatbot/master/virus.png"
-          alt="CANDICE"
-          style="width:60px;height:60px;"
-        />ChatBot tư vấn về Covid-19
-      </h1>
-    </center>
+    <div style="margin: auto" class="border border-light p-3 w-50 shadow">
+      <h1>Một ứng dụng chatBot đơn giản để tư vấn về Covid-19</h1>
+    </div>
     <h3>
-      <p>
-        Mã nguồn của ChatBot này có thể tham khảo tại
-        <a href="https://github.com/thuongvovan/covid19-chatbot">GitHub</a>
-        hoặc ChatBot khác có hỗ trợ nhận diện giộng nói và nói Tiếng Việt tại
-        <a href="https://github.com/thuongvovan/auto_info_call_center">GitHub</a>.
-      </p>
+        Mã nguồn của ChatBot này tại <a href="https://github.com/thuongvovan/covid19-chatbot">GitHub</a>
     </h3>
-    <div class="box"></div>
     <div class="boxed">
       <div>
         <div id="chatbox">
           <p class="botText">
-            <span>Xin chào! Tôi là tổng đài tự động cung cấp thông tin về Covid-19. </span>
+            <span>Xin chào. </span>
           </p>
           <p class="botText">
-            <span>Tôi được tạo bởi Võ Văn Thương. Một cử nhân ngành Y tế Công cộng đang theo đuổi con đường khoa học dữ liệu. </span>
+            <span>Đây là một ứng dụng trả lời tin nhắn tự động liên quan đến đại dịch Covi19 </span>
+          </p>
+          <p class="botText">
+            <span>Được tạo vào tháng 1/2020 bởi Võ Văn Thương.</span>
           </p>
         </div>
         <div id="userInput">
-          <input id="textInput" type="text" name="msg" placeholder="Message" />
+          <input id="textInput" type="text" name="msg" placeholder="Nhập câu hỏi bất kỳ cho chatbot" />
         </div>
       </div>
       <script>
