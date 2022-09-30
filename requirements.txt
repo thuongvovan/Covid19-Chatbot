@@ -13,7 +13,7 @@ gunicorn==20.0.4
 idna==2.9
 itsdangerous==1.1.0
 Jinja2==2.11.3
-joblib==0.13.2
+joblib==1.2.0
 languageflow==1.1.13a1
 MarkupSafe==1.1.1
 munch==2.5.0
